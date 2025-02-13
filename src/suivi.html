@@ -1,0 +1,393 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burger House</title>
+  <link href="css/output.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<style>
+     
+     @media (max-width: 768px) {
+      .active-link {
+        border-left-width: 2px;
+        border-bottom-color: #fff;
+      }
+      
+     }
+     
+    #menu-toggle:checked ~ .menu {
+        width: 250px;
+    }
+    #menu-toggle:checked ~ .overlay {
+        display: block;
+     }
+        .word-spacing {
+            word-spacing: 1rem; /* Ajuste la valeur selon tes besoins */   
+       }
+       .carousel-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none;  /* IE 10+ */
+        }
+        .carousel-container::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+        .carousel-container {
+            position: relative;
+        }
+        .carousel-item {
+            display: none;
+        }
+        .carousel-item.active {
+            display: block;
+        }
+ 
+
+</style>
+
+<body class=" p-0 m-0 bg-white text-custom-vin font-poppins relative "> 
+
+   <!-- Header -->
+   <header class="  text-white px-8  bg-cover bg-center bg-no-repeat bg-fixed font-poppins m-0" style="background-image: url('../assets/images/Rectangle.png'); ">
+    <div class=" flex  justify-center md:justify-end  py-2 md:pr-8  ">
+      <img src="../assets/images/Vector Smart png.png" alt="" class="w-8 md:w-8 mr-4">
+      <p class="text-sm md:text-lg font-semibold text-custom-vin "> Express Delivery +1 234 567 890</p>
+    </div>
+    <div class="flex justify-between items-center   relative  m-0" >
+    <img src="../assets/images/logo_principal.png" alt="logo" class="w-40">
+    <label for="menu-toggle" class="block md:hidden p-4 cursor-pointer  ">
+        <div class="w-8 h-1 bg-black mb-1"></div>
+        <div class="w-8 h-1 bg-black mb-1"></div>
+        <div class="w-8 h-1 bg-black mb-1"></div>
+    </label>
+    <input type="checkbox" id="menu-toggle" class="hidden">
+    <nav class="menu fixed top-0 md:space-x-4 right-0 h-full w-0 bg-yellow-600 shadow-lg overflow-x-hidden transition-width duration-500 pt-16 md:static md:w-auto  md:text-end  md:shadow-none md:bg-transparent md:pt-0 md:flex md:items-center z-30">
+        <label for="menu-toggle" class="absolute top-4 right-4 text-white font-bold md:hidden cursor-pointer">✕</label>
+        
+         <a href="#home" class="nav-link active-link  block px-4 py-2 text-lg text-white hover:bg-black md:hover:bg-transparent md:text-custom-vin md:font-bold">HOME</a>
+          <a href="#menu" class="nav-link block px-4 py-2 text-lg text-white hover:bg-black md:hover:bg-transparent md:text-custom-vin md:font-bold">MENU</a>
+          <a href="#our_story" class="nav-link block px-4 py-2 text-lg text-white hover:bg-black md:hover:bg-transparent md:text-custom-vin md:font-bold">OUR STORY</a>
+          <a href="#contact" class="nav-link block px-4 py-2 text-lg text-white hover:bg-black md:hover:bg-transparent md:text-custom-vin md:font-bold">CONTACT US</a>
+       
+    </nav>
+  </div>
+
+    <div class=" md:py-16 pt-8  ">
+      <div class="mx-auto px-4  ">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 ">
+       <div  class=" flex flex-col  justify-center md:justify-start inset-0 relative">
+          <p class="text-sm md:text-lg text-custom-vin md:text-left mb-2 ">IT IS A GOOD FOR THE GREAT TASTE OF BURGERS</p>
+          <h1 class="text-4xl text-custom-vin md:text-5xl lg:text-6xl font-black leading-none word-spacing mb-4">BURGER <span class="">WEEK</span></h1>
+        </div>
+
+        <div class="flex flex-col items-center justify-center ">
+        <div class=" relative   w-80 h-80 md:w-96 md:h-96 " >
+          
+                 <img src="../assets/images/burgers.png" alt="" class=" ">
+                 <div class="absolute w-24 h-24 md:w-28 md:h-28 left-12 bottom-12 md:left-16 md:bottom-16 flex items-center justify-center  bg-red-600 rounded-full z-10">
+            <div class="absolute w-20 h-20 md:w-24 md:h-24 left-2 bottom-2  flex items-center justify-center  bg-red-600 rounded-full border-4 border-dotted border-white">
+                <p class="text-white text-lg  "><span class="text-white text-xl md:text-2xl font-bold ">$5</span>.49<br ><span class="word-spacing text-xl">ONLY</span></p>
+            </div>
+            </div>
+    
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+ <!-- Overlay -->
+ <div class="overlay h-full fixed inset-0 bg-black hidden opacity-80  md:hidden z-20" id="overlay"></div>
+
+
+ <main class="md:mx-16 bg-white">
+
+<!-- TRY Section -->
+<section id="home" class="pt-16 ">
+    <div class=" mx-auto px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Image principale -->
+        <div class="col-span-1 ">
+          <div class="relative">
+            <img src="../assets/images/Burger_Image.png" alt="Most Popular Burger" class="w-full h-full">
+            <div class=" absolute inset-0 flex  justify-start ">
+              <h2 class="text-white text-sm  md:text-sm lg:text-lg font-bold leading-none  p-4"><span class="text-sm lg:text-lg">TRY IT TODAY</span><br>MOST POPULAR BURGER</h2>
+            </div>
+          </div>
+        </div>
+        <!-- Deux autres images à droite -->
+        <div class="col-span-1  ">
+          <div class="relative ">
+            <img src="../assets/images/Image1.png" alt="More Fun More Taste" class=" w-full h-full">
+            <div class="absolute inset-0 flex justify-start">
+              <h2 class="text-white text-sm md:text-sm lg:text-lg font-bold leading-none  p-4"><span class="text-sm lg:text-lg">TRY IT TODAY</span><br>MORE FUN<br>MORE TASTE</h2>
+            </div>
+          </div>
+         
+   <div class="py-2 lg:py-4"></div>
+        
+        <div class="relative">
+          <img src="../assets/images/Image.png" alt="Fresh & Chili" class="w-full h-full ">
+          <div class="absolute inset-0 flex justify-start">
+            <h2 class="text-white  text-sm  md:text-sm lg:text-lg font-bold  leading-none p-4"><span class="text-sm lg:text-lg">TRY IT TODAY</span><br>FRESH & CHILI</h2>
+          </div>
+        </div>
+     
+      </div>
+    </div>
+      </div>
+
+      <div class="flex justify-center py-8">
+        <a href="#" class="bg-yellow-500 text-custom-vin px-6 py-3 uppercase">ALWAYS TASTY BURGER</a>
+      </div>
+  </section> 
+
+<!-- CHOOSE & ENJOY Section -->
+  <section id="home" class="py-6">
+    <div class=" mx-auto text-center ">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4 md:mb-6">CHOOSE & ENJOY</h2>
+        <p class="text-sm mb-8 text-center px-4 md:px-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum atque molestiae sed corrupti, sunt, totam obcaecati fugiat non dolores pariatur corporis iusto nulla quisquam. Ratione nam libero maxime provident dignissimos.</p>
+        <div class="carousel-container space-x-2 p-4">
+          <!-- Burger 1 -->
+          <div class="flex-none w-full md:w-1/3 lg:w-1/4  overflow-hidden pt-6  ">
+              <img src="../assets/images/Burger_1.png" alt="Burger 1" class="w-full">
+              <div class="p-6">
+                  <h3 class="text-lg md:text-2xl font-bold mb-2 uppercase">Lorem Ipsum Dolor</h3>
+                  <p class="text-sm mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
+                  <div class="flex justify-center">
+                      <a href="#" class="bg-red-500 text-white px-6 py-2 font-semibold uppercase">Order Now</a>
+                  </div>
+              </div>
+          </div>
+          <!-- Burger 2 -->
+          <div class="flex-none w-full md:w-1/3 lg:w-1/4  overflow-hidden ">
+              <img src="../assets/images/Burger_2.png" alt="Burger 2" class="w-full">
+              <div class="p-6">
+                  <h3 class="text-lg md:text-2xl font-bold mb-2 uppercase">Lorem Ipsum Dolor</h3>
+                  <p class="text-sm mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
+                  <div class="flex justify-center">
+                      <a href="#" class="bg-red-500 text-white px-6 py-2 font-semibold uppercase">Order Now</a>
+                  </div>
+              </div>
+          </div>
+          <!-- Burger 3 -->
+          <div class="flex-none w-full md:w-1/3 lg:w-1/4  overflow-hidden pt-6">
+              <img src="../assets/images/Burger_3.png" alt="Burger 3" class="w-full">
+              <div class="p-6">
+                  <h3 class="text-lg md:text-2xl font-bold mb-2 uppercase">Lorem Ipsum Dolor</h3>
+                  <p class="text-sm mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
+                  <div class="flex justify-center">
+                      <a href="#" class="bg-red-500 text-white px-6 py-2 font-semibold uppercase">Order Now</a>
+                  </div>
+              </div>
+          </div>
+          <div class="flex-none w-full md:w-1/3 lg:w-1/4  overflow-hidden pt-6">
+              <img src="../assets/images/Burger_3.png" alt="Burger 3" class="w-full">
+              <div class="p-6">
+                  <h3 class="text-lg md:text-2xl font-bold mb-2 uppercase">Lorem Ipsum Dolor</h3>
+                  <p class="text-sm mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
+                  <div class="flex justify-center">
+                      <a href="#" class="bg-red-500 text-white px-6 py-2 font-semibold uppercase">Order Now</a>
+                  </div>
+              </div>
+          </div>
+          <div class="flex-none w-full md:w-1/3 lg:w-1/4  overflow-hidden pt-6">
+              <img src="../assets/images/Burger_3.png" alt="Burger 3" class="w-full">
+              <div class="p-6">
+                  <h3 class="text-lg md:text-2xl font-bold mb-2 uppercase">Lorem Ipsum Dolor</h3>
+                  <p class="text-sm mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
+                  <div class="flex justify-center">
+                      <a href="#" class="bg-red-500 text-white px-6 py-2 font-semibold uppercase">Order Now</a>
+                  </div>
+              </div>
+          </div>
+          <div class="flex-none w-full md:w-1/3 lg:w-1/4  overflow-hidden pt-6">
+              <img src="../assets/images/Burger_3.png" alt="Burger 3" class="w-full">
+              <div class="p-6">
+                  <h3 class="text-lg md:text-2xl font-bold mb-2 uppercase">Lorem Ipsum Dolor</h3>
+                  <p class="text-sm mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
+                  <div class="flex justify-center">
+                      <a href="#" class="bg-red-500 text-white px-6 py-2 font-semibold uppercase">Order Now</a>
+                  </div>
+              </div>
+          </div>
+          <!-- Ajoutez plus de burgers ici -->
+      </div>
+      
+      
+    </div>
+</section> 
+
+<!-- UPCOMMING EVENTS Section -->
+<section id="home" class="md:py-16 ">
+  <div class="mx-auto text-left px-8">
+      <div class="bg-white shadow-lg">
+          <div class="grid grid-cols-1 md:grid-cols-2">
+              <div class="p-6 relative">
+                  <h3 class="text-sm font-bold mt-2 lg:mb-4">Discover</h3>
+                  <h2 class="text-sm md:text-lg font-bold mb-4">UPCOMING EVENTS</h2>
+                  <div id="carousel-texts">
+                      <div class="carousel-item active">
+                          <p class="text-sm mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est omnis nobis dolore mollitia fuga obcaecati fugiat sunt quas molestias dolorum soluta porro cupiditate iusto culpa eum vero, quae quasi modi.</p>
+                      </div>
+                      <div class="carousel-item">
+                          <p class="text-sm mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo possimus autem, doloremque fugiat dolor molestiae pariatur consectetur laboriosam nisi deserunt rerum ipsam nulla iusto esse sapiente asperiores fuga dolores laudantium.Nemo possimus autem, doloremque fugiat dolor molestiae pariatur consectetur laboriosam nisi deserunt rerum ipsam nulla iusto esse sapiente asperiores fuga dolores laudantium</p>
+                      </div>
+                      <div class="carousel-item">
+                          <p class="text-sm mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt quo veniam tempore possimus, repudiandae nulla iusto dignissimos fugiat magnam doloribus. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui sed modi maiores ea asperiores sint perferendis corrupti voluptatem voluptates, ipsum minus totam sunt alias cum architecto dolor rem nesciunt quaerat.</p>
+                      </div>
+                  </div>
+                  <div class="flex left-0 bottom-0 p-4">
+                      <img src="../assets/images/Ellipse_jaune.png" alt="Ellipse jaune" class="carousel-control cursor-pointer mr-4" data-index="0">
+                      <img src="../assets/images/Ellipse_grise.png" alt="Ellipse grise" class="carousel-control cursor-pointer mr-4" data-index="1">
+                      <img src="../assets/images/Ellipse_grise.png" alt="Ellipse grise 2" class="carousel-control cursor-pointer mr-4" data-index="2">
+                  </div>
+              </div>
+              <div class="p-6">
+                  <div id="carousel-images">
+                      <img src="../assets/images/Burger_Events.png" alt="Event 1" class="carousel-item active w-full">
+                      <img src="../assets/images/Burger_Image.png" alt="Event 2" class="carousel-item w-full">
+                      <img src="../assets/images/burgers.png" alt="Event 3" class="carousel-item w-full">
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<!--RESERVATION Section-->
+<section class="py-8 relative">
+
+  <img src="../assets/images/Burger2.png" alt="image business" class="  absolute  left-0 w-28 md:w-40 md:-left-16 -top-0">
+
+    <div class="text-center justify-center  flex-row ">
+  <h2 class="text-xl md:text-2xl  font-semibold mb-2">RESERVATION</h2>
+  <h1 class="text-2xl md:text-3xl font-black mb-4">BOOK YOUR TABLE</h1> 
+</div>
+<img src="../assets/images/Imagee.png" alt="Bottle" class="  absolute  right-0  w-16 bottom-0 md:w-32 md:-right-16 md:top-20">
+<img src="../assets/images/Bottle.png" alt="Bottle" class="  absolute   left-0 w-16 md:w-32 md:-left-16 top-40">
+
+
+
+
+  <div class=" mx-auto px-8 text-center justify-center">
+      <div class=" ">
+          
+              <form class="bg-white:hidden shadow-lg:hidden  p-6 space-y-4" method="post">
+                  <div class="flex flex-col md:flex-row space-y-4 justify-center md:space-y-0 md:space-x-4">
+                    <input type="text" placeholder="Name" required class=" w-full md:w-45p p-2 border border-gray-300 ">
+                    <input type="email" placeholder="Email" required class="w-full md:w-45p p-2 border border-gray-300 required:*">
+                  </div>
+
+                  <div class="flex flex-col md:flex-row space-y-4  justify-center md:space-y-0 md:space-x-4">
+                    <input type="date" placeholder="Date" class=" w-full md:w-45p p-2 border border-gray-300  ">
+                    <input type="time" placeholder="Time" class="w-full md:w-45p p-2 border border-gray-300 ">
+                  </div>
+
+                  <div class="flex flex-col md:flex-row space-y-4 justify-center  md:space-y-0 md:space-x-4">
+                    <input type="number" placeholder="People" class="w-full md:w-45p p-2 border border-gray-300  text-red-500">
+                    <button class="bg-red-600 text-white w-full md:w-45p p-2 uppercase font-bold">Find a Table</button>
+                  </div>
+              </form>
+         
+      </div>
+  </div>
+</section>
+
+
+<section class="container mx-auto p-4">
+  <div class="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
+      <div class="  p-6 flex-1">
+          <h2 class="text-xl font-bold mb-4">Titre 1</h2>
+          <p class="text-gray-700 mb-4">Ceci est un texte de démonstration pour le premier div. Vous pouvez le personnaliser avec votre propre contenu.</p>
+          <button class="bg-blue-500 text-white px-4 py-2 rounded">Bouton 1</button>
+      </div>
+
+      <div class="  p-6 flex-1 flex items-center justify-center">
+          <img src="../assets/images/Fichier 1.png" alt="Image placeholder" class="rounded-lg shadow-lg">
+      </div>
+  </div>
+</section>
+
+
+
+
+ 
+<!-- FOOTER Section-->
+<footer class="relative bg-white text-white py-10 ">
+  <div class=" mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 ">
+
+      <div class= "absolute inset-0  bg-cover bg-center " style="background-image: url('../assets/images/bg-footer.png');  ">
+      </div>
+      <div class="relative">
+     
+      
+          <div class="md:w-full mb-6  inline-block">
+              <div class="flex items-center ">
+             <img src="../assets/images/logo_principal_Footer.png" alt="" class="">
+              </div>
+            </div>
+
+            <div class="md:mb-16 mb-8 md:justify-between flex flex-col md:flex-row text-center">
+              <div class="md:w-1/2 px-4 "> 
+                <p class="text-white text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.
+                </p>
+                </div>
+                 
+          <div class="md:w-1/3 items-center space-y-2 pt-6 ">
+            <div class="flex items-center justify-start space-x-4">
+              <img src="../assets/logo/gps.png" alt="" class="w-6 ">
+                <p class="md:text-sm">MAIN ROAD, BUILDING NAME</p>
+            </div>
+            <div class="flex items-center justify-start space-x-4">
+              <img src="../assets/logo/email.png" alt="" class="w-6">
+                <p class="md:text-sm">INFO@COMPANYNAME.COM</p>
+            </div>
+              </div>
+            </div>
+
+            <div class="relative mb-12  flex flex-col md:flex-row">
+              <div class="absolute md:left-0 md:w-2/3 "> 
+                <p class="text-white ">
+                  &copy; COMPANY NAME 2020, ALL RIGHTS RESERVED
+                </p>
+                </div>
+                 
+          <div class="absolute  md:w-15p items-center space-y-16  md:right-6 md:top-0 top-16 ">
+            <div class="flex items-center space-x-4">
+             
+              <a href="#" ><img src="../assets/logo/facebook-app-symbol.png" alt="" class="w-6 "></a>
+              <a href="#"><img src="../assets/logo/linkedin.png"  alt="" class="w-6 "></a>
+              <a href="#"><img src="../assets/logo/phone-call.png" alt="" class="w-6 "></a>
+              <a href="#"><img src="../assets/logo/twitter.png" alt="" class="w-6 "> </a>
+              </div>
+            </div>
+          </div>
+      </div>
+ </div>
+ <div id="backToTopBtn" title="Retour en haut" onclick="topFunction()">
+  <a href="#" class="absolute text-white font-bold text-xs  md:text-sm right-4 md:right-32 bottom-0 pb-8 md:pb-2">BACK TO TOP ^ </a>
+</div>
+</footer>
+
+
+<script src="../script/script.js"></script>
+<script src="../script/carousel.js"></script>
+<script src="../script/linkActive.js"></script>
+<script src="../script/carousel_2.js"></script>  
+
+   </html>

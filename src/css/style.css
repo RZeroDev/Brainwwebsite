@@ -1,0 +1,232 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**/
+.navbar-hidden {
+  display: none;
+}
+.submenu-hidden {
+  display: none;
+}
+.submenu-visible {
+  display: block;
+}
+.nav-link {
+  text-decoration: none;
+}
+nav .active {
+background-color:rgb(218, 47, 47);
+padding: 4px;
+border-radius: 10px;
+}
+
+.owl-carousel .owl-item {
+  transition: transform 0.2s ease;
+
+}
+
+.toggle-btn {
+       cursor: pointer;
+       display: inline-flex;
+       align-items: center;
+       justify-content: center;
+   }
+   .toggle-btn .switch-wrap {
+       position: relative;
+       display: inline-block;
+       width: 55px;
+       height: 25px;
+       margin: 0 10px;
+   }
+   .toggle-btn .switch-wrap input {
+       opacity: 0;
+       width: 0;
+       height: 0;
+   }
+   .toggle-btn .switcher {
+       position: absolute;
+       top: 0;
+       left: 0;
+       right: 0;
+       bottom: 0;
+       background-color: #ccc;
+       border-radius: 30px;
+       transition: 0.4s;
+   }
+   .toggle-btn .switcher:before {
+       position: absolute;
+       content: "";
+       height: 22px;
+       width: 22px;
+       left: 2px;
+       bottom: 2px;
+       background-color: white;
+       border-radius: 50%;
+       transition: 0.4s;
+   }
+   .toggle-btn input:checked + .switcher {
+       background-color: #4f46e5;
+   }
+   .toggle-btn input:checked + .switcher:before {
+       transform: translateX(30px);
+   }
+   .pricing-discount {
+       background-color: #4f46e5;
+       color: white;
+       padding: 4px 12px;
+       border-radius: 9999px;
+       margin-left: auto;
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+.timeline .timeline-step-1, .timeline .timeline-step-2 {
+    position: relative;
+    z-index: 0;
+    overflow: visible;
+  }
+  .timeline .timeline-step-1 .timeline-item::before, .timeline .timeline-step-2 .timeline-item::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    border-left: 3px dashed #D5D7DD;
+    left: 50%;
+    bottom: -50%;
+    z-index: -1;
+  }
+  @media (min-width: 576px) {
+    .timeline .timeline-step-1 .timeline-item::before, .timeline .timeline-step-2 .timeline-item::before {
+      bottom: -80%;
+    }
+  }
+  @media (min-width: 992px) {
+    .timeline .timeline-step-1 .timeline-item, .timeline .timeline-step-2 .timeline-item {
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+    }
+    .timeline .timeline-step-1 .timeline-item::before, .timeline .timeline-step-2 .timeline-item::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      border-left: none;
+      height: -webkit-fit-content;
+      height: -moz-fit-content;
+      height: fit-content;
+      border-bottom: 3px dashed #D5D7DD;
+      -o-border-image: url("../assets/img/illustrations/border.webp") 20 round;
+      border-image: url("../assets/img/illustrations/border.webp") 20 round;
+      left: 50%;
+      bottom: 50%; 
+      z-index: -1;
+    }
+  }
+  .timeline .timeline-icon {
+    width: 4rem;
+    height: 4rem; 
+  }
+  @media (min-width: 992px) {
+    .timeline .timeline-content {
+      min-height: 8.438rem;
+    }
+  }
+  .dots {
+
+    left: -7%;
+    bottom: -7%;
+   
+
+  }
+
+
+  .dots-1 {
+
+   right:0;
+    bottom: 1.5%;
+   
+
+  }
+
+  .underline-custom {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .underline-custom::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 20%;
+    width: 105%;
+    height: 2px;
+    background-color: #15a715; /* Remplacez cette couleur par la couleur souhaitée */
+    transform: translateX(-5%);
+  }
+
+  #backToTopBtn {
+    display: none; /* Caché par défaut */
+    position: fixed; /* Fixé en bas à droite */
+    bottom: 5px;
+    right: 15px;
+    z-index: 99; /* S'assure qu'il est au-dessus des autres éléments */
+    cursor: pointer;
+}
+
+#backToTopBtn img {
+    width: 50px; /* Largeur de l'image */
+    height: 50px; /* Hauteur de l'image */
+   
+}
+
+#backToTopBtn img:hover {
+    opacity: 0.7; /* Réduit l'opacité au survol pour un effet visuel */
+}
+
+
+  @keyframes scrollTestimonials {
+    0% {
+      transform: translateY(0%);
+    }
+    25% {
+      transform: translateY(-25%);
+    }
+    50% {
+      transform: translateY(-50%);
+    }
+    75% {
+      transform: translateY(-75%);
+    }
+    100% {
+      transform: translateY(0%);
+    }
+  }
+
+  #testimonial-container {
+    animation: scrollTestimonials 20s infinite;
+  }
+ 

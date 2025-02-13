@@ -1,0 +1,49 @@
+<!-- loading.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/output.css" rel="stylesheet">
+  <title>Brainwave</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #ffff;
+    }
+
+    .loading-icon {
+      width: 100px;
+      height: 100px;
+      border: 10px solid #cbd5e0; /* bg-gray-400 */
+      border-top: 10px solid #161C2D; /* bg-pink-500 */
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="loading-icon"></div> <br>
+  <h1 class=" text-xl md:text-2xl font-black ">BRAINWAVE.IO</h1>
+  
+  <script>
+    // Rediriger vers index.html après 3 secondes (3000 ms)
+    setTimeout(() => {
+      window.location.href = '../src/index.html';
+    }, 6000); // ajuster le temps en millisecondes selon votre besoin
+  </script>
+</body>
+</html>

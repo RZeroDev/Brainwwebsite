@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brands Carousel</title>
+    <link href="css/output.css" rel="stylesheet">
+ 
+</head>
+<body class="bg-violet-700">
+
+  <div class="flex flex-col lg:flex-row justify-between items-center bg-gray-900 p-8 accordion">
+    <!-- Left Section -->
+    <div class="text-white mb-8 lg:mb-0 lg:w-1/2">
+      <h2 class="text-3xl font-bold mb-4">We are always here for your backup.</h2>
+      <p class="mb-6">We share common trends and strategies for creating & improving your text-nowrap rental income.</p>
+      <div class="flex items-start mb-4">
+        <img src="path/to/check-icon.png" alt="Check icon" class="w-6 h-6 mr-4 mt-1">
+        <div>
+          <h3 class="text-xl font-semibold">Noise Free Locations</h3>
+          <p>We ensure noise-free locations for your peace of mind and sound sleep.</p>
+        </div>
+      </div>
+      <div class="flex items-start">
+        <img src="path/to/check-icon.png" alt="Check icon" class="w-6 h-6 mr-4 mt-1">
+        <div>
+          <h3 class="text-xl font-semibold">24/7 Hour Support</h3>
+          <p>Get support from our efficient customer support team, 24/7, all year round.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Right Section (Accordion) -->
+    <div class="bg-white rounded-lg shadow-lg lg:w-1/2">
+      <div class="border-b" id="accordion">
+        <button class="flex justify-between w-full p-4 text-left text-gray-900 font-medium" data-toggle="#item1" >
+          How to setup BrainwaveIO?
+          <span>&#x25BA;</span>
+        </button>
+        <div id="item1" class="collapse p-4 text-gray-700">
+          <!-- Contenu de l'accordéon -->
+          Instructions on how to setup BrainwaveIO.
+        </div>
+      </div>
+      <div class="border-b">
+        <button class="flex justify-between w-full p-4 text-left text-gray-900 font-medium" data-toggle="#item2" >
+          Can I use BrainwaveIO for my clients?
+          <span>&#x25BA;</span>
+        </button>
+        <div id="item2" class="collapse p-4 text-gray-700">
+          <!-- Contenu de l'accordéon -->
+          Yes, you can use BrainwaveIO for your clients.
+        </div>
+      </div>
+      <div class="border-b">
+        <button class="flex justify-between w-full p-4 text-left text-gray-900 font-medium" data-toggle="#item3">
+          How often do you release update?
+          <span>&#x25BA;</span>
+        </button>
+        <div id="item3" class="collapse p-4 text-gray-700">
+          <!-- Contenu de l'accordéon -->
+          We release updates every month.
+        </div>
+      </div>
+      <div class="border-b">
+        <button class="flex justify-between w-full p-4 text-left text-gray-900 font-medium" data-toggle="#item4" >
+          How can I access to old version?
+          <span>&#x25BA;</span>
+        </button>
+        <div id="item4" class="collapse p-4 text-gray-700">
+          <!-- Contenu de l'accordéon -->
+          You can access old versions in the archive section.
+        </div>
+      </div>
+      <div>
+        <button class="flex justify-between w-full p-4 text-left text-gray-900 font-medium" data-toggle="#item5" >
+          How can I get your support?
+          <span>&#x25BA;</span>
+        </button>
+        <div id="item5" class="collapse p-4 text-gray-700">
+          <!-- Contenu de l'accordéon -->
+          To reach our support team, simply send an email to support@brainwaveio.com. Our team will promptly address your inquiry and provide assistance as needed.
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const accordionButtons = document.querySelectorAll('[data-toggle]');
+
+  accordionButtons.forEach(button => {
+    button.addEventListener('click', function () {
+      const target = document.querySelector(button.getAttribute('data-toggle'));
+
+      // Close all other accordion items
+      document.querySelectorAll('.accordion .collapse').forEach(collapse => {
+        if (collapse !== target) {
+          collapse.classList.add('hidden');
+          collapse.previousElementSibling.querySelector('span').innerHTML = '&#x25BA;';
+        }
+      });
+
+      // Toggle the clicked accordion item
+      if (target.classList.contains('hidden')) {
+        target.classList.remove('hidden');
+        button.querySelector('span').innerHTML = '&#x25BC;'; // Down arrow
+      } else {
+        target.classList.add('hidden');
+        button.querySelector('span').innerHTML = '&#x25BA;'; // Right arrow
+      }
+    });
+  });
+});
+</script>
+
+
+
+
+<body>
+</html>

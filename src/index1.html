@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<body lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brainwave</title>
+  <link href="css/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+   
+    <style>
+        .owl-carousel .owl-item {
+            transition: transform 0.2s ease;
+        }
+    </style>
+
+</head>
+<body class="bg-custom-bleu-nuit">
+
+  <nav class="bg-gray-800">
+    <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <div class="relative flex h-16 items-center justify-between">
+            <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                <!-- Mobile menu button-->
+                <button type="button" id="mobile-menu-button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                    <span class="absolute -inset-0.5"></span>
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                    <svg class=" hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                <div class="flex flex-shrink-0 items-center">
+                    <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
+                </div>
+                <div class="hidden sm:ml-6 sm:block">
+                    <div class="flex space-x-4">
+                        <a href="#" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Dashboard</a>
+                        <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Team</a>
+                        <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Projects</a>
+                        <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Calendar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                <button type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                    <span class="absolute -inset-1.5"></span>
+                    <span class="sr-only">View notifications</span>
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+                    </svg>
+                </button> 
+                <!-- Profile dropdown -->
+                <div class="relative ml-3">
+                    <div>
+                        <button type="button" class="relative flex  rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                            <span class="absolute -inset-1.5"></span>
+                            <span class="sr-only">Open user menu</span>
+                            <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                        </button>
+                    </div>
+                    <div class="hidden absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" 
+                    aria-orientation="vertical" aria-labelledby="user-menu-button" id="user-menu">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-slate-200" role="menuitem">Your Profile</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-slate-200" role="menuitem">Settings</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-slate-200" role="menuitem">Sign out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Mobile menu, show/hide based on menu state. -->
+    <div class="hidden sm:hidden" id="mobile-menu">
+        <div class="space-y-1 px-2 pb-3 pt-2">
+            <a href="#" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Dashboard</a>
+            <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Team</a>
+            <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Projects</a>
+            <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Calendar</a>
+        </div>
+    </div>
+</nav>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const userMenuButton = document.getElementById('user-menu-button');
+    const userMenu = document.getElementById('user-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+        const expanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
+        mobileMenuButton.setAttribute('aria-expanded', !expanded);
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    userMenuButton.addEventListener('click', () => {
+        userMenu.classList.toggle('hidden');
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!userMenuButton.contains(event.target) && !userMenu.contains(event.target)) {
+            userMenu.classList.add('hidden');
+        }
+    });
+});
+</script>
+</body>
+ </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     <!-- BRANDS CAROUSEL -->
+     <div class=" mx-auto py-16 border-b-2  ">
+      <div class="text-center">
+          <div class="owl-carousel brands-carousel-5 ">
+              <!-- BRAND LOGO IMAGE -->
+              <div class="brand-logo hover:pb-1 transition duration-300 ease-in-out">
+                <a href="#"><img class="img-fluid " src="../assets/logo/logo_1.png" alt="brand-logo"></a>
+              </div>
+
+              <!-- BRAND LOGO IMAGE -->
+              <div class="brand-logo hover:pb-1 transition duration-300 ease-in-out">
+                <a href="#"><img class="img-fluid " src="../assets/logo/logo_1.png" alt="brand-logo"></a>
+              </div>
+
+              <!-- BRAND LOGO IMAGE -->
+              <div class="brand-logo hover:pb-1 transition duration-300 ease-in-out">
+                <a href="#"><img class="img-fluid " src="../assets/logo/logo_1.png" alt="brand-logo"></a>
+              </div>
+
+              <!-- BRAND LOGO IMAGE -->
+              <div class="brand-logo hover:pb-1 transition duration-300 ease-in-out">
+                <a href="#"><img class="img-fluid " src="../assets/logo/logo_1.png" alt="brand-logo"></a>
+              </div>
+
+              <!-- BRAND LOGO IMAGE -->
+              <div class="brand-logo hover:pb-1 transition duration-300 ease-in-out">
+                <a href="#"><img class="img-fluid " src="../assets/logo/logo_1.png" alt="brand-logo"></a>
+              </div>
+
+              <!-- BRAND LOGO IMAGE -->
+              <div class="brand-logo hover:pb-1 transition duration-300 ease-in-out">
+                <a href="#"><img class="img-fluid " src="../assets/logo/logo_1.png" alt="brand-logo"></a>
+              </div>
+
+              <!-- BRAND LOGO IMAGE -->
+              <div class="brand-logo  transition duration-300 ease-in-out">
+                <a href="#"><img class="hover:pb-1 " src="../assets/logo/logo_1.png" alt="brand-logo "></a>
+              </div>
+
+              <!-- BRAND LOGO IMAGE -->
+              <div class="brand-logo hover:pb-1 transition duration-300 ease-in-out">
+                <a href="#"><img class="hover:pb-1" src="../assets/logo/logo_1.png" alt="brand-logo"></a>
+              </div>
+
+              <!-- BRAND LOGO IMAGE -->
+              <div class="brand-logo hover:pb-1 transition duration-300 ease-in-out">
+                <a href="#"><img class="hover:pb-1 " src="../assets/logo/logo_1.png" alt="brand-logo"></a>
+              </div>
+          </div>    
+      </div>
+  </div>
+  <!-- END BRANDS CAROUSEL -->
+
+      <div class=" mx-auto py-16">
+          <div class="flex flex-wrap -mx-4">
+              <!-- Column 1 -->
+              <div class="w-full md:w-1/3 px-4 mb-8 md:mb-0">
+                  <div class="bg-white p-6 rounded-lg shadow-lg text-left">
+                
+                      <div class="flex items-start ">
+                    
+                          <img class="mr-4" src="../assets/images/icon3.png" alt="Icon 1">
+                          <div class="flex flex-col justify-start ">
+                            <h3 class="text-xl font-bold mb-4">Organize your campaigns</h3>
+                            <p class="text-gray-700   ">With lots of unique blocks, you can easily build a page without coding. Build your next landing page.</p>
+                        </div>
+                      </div>
+                     
+                  </div>
+              </div>
+              <!-- Column 2 -->
+              <div class="w-full md:w-1/3 px-4 mb-8 md:mb-0">
+                  <div class="bg-white p-6 rounded-lg shadow-lg text-left">
+                      <div class="flex items-center mb-4">
+                          <img class="mr-4" src="../assets/images/icon2.png" alt="Icon 2">
+                          <h3 class="text-xl font-bold">Manage customers</h3>
+                      </div>
+                      <p class="text-gray-700 text-center">With lots of unique blocks, you can easily build a page without coding. Build your next landing page.</p>
+                  </div>
+              </div>
+              <!-- Column 3 -->
+              <div class="w-full md:w-1/3 px-4 mb-8 md:mb-0">
+                  <div class="bg-white p-6 rounded-lg shadow-lg text-left">
+                      <div class="flex items-center mb-4">
+                          <img class="mr-4" src="../assets/images/icon1.png" alt="Icon 3">
+                          <h3 class="text-xl font-bold">Track progress fast</h3>
+                      </div>
+                      <p class="text-gray-700 text-center">With lots of unique blocks, you can easily build a page without coding. Build your next landing page.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="bg-gray-50 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center">
+          <!-- Image Cascade -->
+          <div class="flex flex-wrap md:w-1/2 gap-4 justify-center">
+            <img src="../assets/images/image1_2.png" alt="Image 1" class="rounded-lg h-40 w-40 object-cover cursor-pointer" onclick="openModal(1)">
+            <img src="../assets/images/image_1_3.png" alt="Image 2" class="rounded-lg h-32 w-32 object-cover cursor-pointer" onclick="openModal(2)">
+            <img src="../assets/images/image_1_4.png" alt="Image 3" class="rounded-lg h-48 w-48 object-cover cursor-pointer" onclick="openModal(3)">
+            <img src="../assets/images/image1_5.png" alt="Image 4" class="rounded-lg h-36 w-36 object-cover cursor-pointer" onclick="openModal(4)">
+          </div>
+      
+          <!-- Text Content -->
+          <div class="md:w-1/2 md:pl-12">
+            <h2 class="text-3xl font-bold text-gray-800">Make your customers happy by giving services.</h2>
+            <p class="mt-4 text-gray-600">We share common trends and strategies for improving your rental income and making sure you stay in high demand.</p>
+            <a href="#" class="mt-6 inline-block text-blue-600 font-semibold hover:underline">Start a free trial &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div id="modal" class="fixed inset-0 bg-black bg-opacity-75 hidden items-center justify-center">
+        <div class="relative">
+          <button class="absolute top-0 right-0 mt-2 mr-2 text-white text-2xl" onclick="closeModal()">&times;</button>
+          <div class="flex items-center justify-center">
+            <button class="text-white text-3xl mr-4" onclick="prevImage()">&larr;</button>
+            <img id="modalImage" src="" alt="Modal Image" class="max-w-full max-h-full">
+            <button class="text-white text-3xl ml-4" onclick="nextImage()">&rarr;</button>
+          </div>
+        </div>
+      </div>
+      
+      <script>
+        let currentImage = 0;
+        const images = ["../assets/images/image1_2.png", "../assets/images/image_1_3.png", "../assets/images/image_1_4.png", "../assets/images/image1_5.png"];
+      
+        function openModal(index) {
+          currentImage = index - 1;
+          document.getElementById('modalImage').src = images[currentImage];
+          document.getElementById('modal').classList.remove('hidden');
+        }
+      
+        function closeModal() {
+          document.getElementById('modal').classList.add('hidden');
+        }
+      
+        function prevImage() {
+          currentImage = (currentImage - 1 + images.length) % images.length;
+          document.getElementById('modalImage').src = images[currentImage];
+        }
+      
+        function nextImage() {
+          currentImage = (currentImage + 1) % images.length;
+          document.getElementById('modalImage').src = images[currentImage];
+        }
+      </script>
+            
+            <form class="py-24">
+              <label class="block">
+                <span class="block text-sm font-medium text-slate-700">Username</span>
+                <!-- Using form state modifiers, the classes can be identical for every input -->
+                <input type="text" value="tbone" disabled class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+                  focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
+                  disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
+                  invalid:border-pink-500 invalid:text-pink-600
+                  focus:invalid:border-pink-500 focus:invalid:ring-pink-500
+                "/>
+              </label>
+              <label class="block">
+                <span class="block text-sm font-medium text-slate-700">Username</span>
+                <!-- Using form state modifiers, the classes can be identical for every input -->
+                <input type="text" value="tbone"  class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+                  focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
+                  disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
+                  invalid:border-pink-500 invalid:text-pink-600
+                  focus:invalid:border-pink-500 focus:invalid:ring-pink-500
+                "/>
+              </label>
+              <label class="block">
+                <span class="block text-sm font-medium text-slate-700">Email</span>
+                <!-- Using form state modifiers, the classes can be identical for every input -->
+                <input type="email" value="zoungla@gmail.com"  class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+                  focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
+                  disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
+                  invalid:border-pink-500 invalid:text-pink-600
+                  focus:invalid:border-pink-500 focus:invalid:ring-pink-500
+                "/>
+              </label>
+              <label class="block">
+                <span class="block text-sm font-medium text-slate-700">Username</span>
+                <!-- Using form state modifiers, the classes can be identical for every input -->
+                <input type="text" value="tbone" disabled class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+                  focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
+                  disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
+                  invalid:border-pink-500 invalid:text-pink-600
+                  focus:invalid:border-pink-500 focus:invalid:ring-pink-500
+                "/>
+              </label>
+            </form>
+  
+     
+      <footer class="bg-gray-900 text-white py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-y-4">
+            <!-- Company Column -->
+            <div class="mb-4">
+              <h3 class="font-semibold text-lg">Company</h3>
+              <ul class="mt-4 space-y-2">
+                <li><a href="#" class="hover:underline">About us</a></li>
+                <li><a href="#" class="hover:underline">Contact us</a></li>
+                <li><a href="#" class="hover:underline">Careers</a></li>
+                <li><a href="#" class="hover:underline">Press</a></li>
+              </ul>
+            </div>
+            
+            <!-- Product Column -->
+            <div class="mb-4">
+              <h3 class="font-semibold text-lg">Product</h3>
+              <ul class="mt-4 space-y-2">
+                <li><a href="#" class="hover:underline">Features</a></li>
+                <li><a href="#" class="hover:underline">Pricing</a></li>
+                <li><a href="#" class="hover:underline">News</a></li>
+                <li><a href="#" class="hover:underline">Help desk</a></li>
+                <li><a href="#" class="hover:underline">Support</a></li>
+              </ul>
+            </div>
+            
+            <!-- Services Column -->
+            <div class="mb-4">
+              <h3 class="font-semibold text-lg">Services</h3>
+              <ul class="mt-4 space-y-2">
+                <li><a href="#" class="hover:underline">Digital Marketing</a></li>
+                <li><a href="#" class="hover:underline">Content Writing</a></li>
+                <li><a href="#" class="hover:underline">SEO for Business</a></li>
+                <li><a href="#" class="hover:underline">UI Design</a></li>
+              </ul>
+            </div>
+            
+            <!-- Legal Column -->
+            <div class="mb-4">
+              <h3 class="font-semibold text-lg">Legal</h3>
+              <ul class="mt-4 space-y-2">
+                <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+                <li><a href="#" class="hover:underline">Terms & Conditions</a></li>
+                <li><a href="#" class="hover:underline">Return Policy</a></li>
+              </ul>
+            </div>
+      
+            <!-- Contact Us Column -->
+            <div class="mb-4">
+              <h3 class="font-semibold text-lg">Contact us</h3>
+              <ul class="mt-4 space-y-2">
+                <li><a href="mailto:support@brainwave.io" class="hover:underline">support@brainwave.io</a></li>
+                <li><span>+133-394-3439-1435</span></li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Footer Bottom -->
+          <div class="mt-10 border-t border-gray-700 pt-6 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-sm">© 2024 Copyright, All Rights Reserved, Made by Sejal_ui_ux with <span class="text-blue-500">♥</span></p>
+            <div class="flex space-x-4 mt-4 md:mt-0">
+              <a href="#" class="hover:text-blue-500"><img src="../assets/images/twitter.png" alt=""></a>
+              <a href="#" class="hover:text-blue-500"><img src="../assets/images/linkd.png" alt=""></a>
+              <a href="#" class="hover:text-blue-500"><img src="../assets/images/facebook.png" alt=""></a>
+              <a href="#" class="hover:text-blue-500"><img src="../assets/images/instagram.png" alt=""></a>
+            </div>
+          </div>
+        </div>
+      </footer>
+      
+
+      <section id="teams" class="py-16  bg-custom-gray text-black">
+        <div class="mx-24 ">
+          <div class="flex flex-wrap ">
+              <!-- Column 1 -->
+              <div class="w-full md:w-1/3 px-4 mb-8 md:mb-0">
+                  <div class="">
+                      <div class="flex flex-col items-start">
+                          <img class="mr-4 mb-6" src="../assets/images/quote.png" alt="Icon 1">
+                          <h3 class="text-lg  font-bold mb-2">''OMG! I cannot believe that I have got a brand new landing page after getting Omega. It was super easy to edit and publish. ''</h3>
+                          <h3 class="text-sm font-bold mb-2">Diego Morata</h3>
+                          <h3 class="text-sm  mb-2">Web Developer</h3>
+                      </div>
+                  </div>
+              </div>
+              <!-- Column 2 -->
+              <div class="w-full md:w-1/3 px-4 mb-8 md:mb-0">
+                <div class="">
+                  <div class="flex flex-col items-start">
+                      <img class="mr-4 mb-6" src="../assets/images/quote.png" alt="Icon 1">
+                      <h3 class="text-lg  font-bold mb-2">''Simply the best. Better than all the rest. I'd recommend this product to beginners and advanced users. ''</h3>
+                      <h3 class="text-sm font-bold mb-2">Franklin Hicks</h3>
+                      <h3 class="text-sm  mb-2">Digital Marketer</h3>
+                  </div>
+              </div>
+              </div>
+              <!-- Column 3 -->
+              <div class="w-full md:w-1/3 px-4 mb-8 md:mb-0">
+                <div class="">
+                  <div class="flex flex-col items-start">
+                      <img class="mr-4 mb-6" src="../assets/images/quote.png" alt="Icon 1">
+                      <h3 class="text-lg  font-bold mb-2">''OMG! I cannot believe that I have got a brand new landing page after getting Omega. It was super easy to edit and publish. ''</h3>
+                      <h3 class="text-sm font-bold mb-2">Godson Romuald</h3>
+                      <h3 class="text-sm  mb-2">Web Design</h3>
+                  </div>
+              </div>
+              </div>
+          </div>
+        </div>
+        </section>
+        
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script>
+      $(document).ready(function(){
+          $(".owl-carousel").owlCarousel({
+              loop: true,
+              margin: 30,
+              nav: false,
+              autoplay: true,
+              autoplayTimeout: 3000,
+              autoplayHoverPause: true,
+              responsive: {
+                  0: {
+                      items: 2
+                  },
+                  600: {
+                      items: 4
+                  },
+                  1000: {
+                      items: 5
+                  }
+              }
+          });
+      });
+  </script>
+
+
+</body>
+
+</html>
